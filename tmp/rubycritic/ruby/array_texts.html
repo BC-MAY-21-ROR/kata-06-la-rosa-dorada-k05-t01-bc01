@@ -47,12 +47,12 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2021-09-14 18:28:58 +0000'>2021-09-14 18:28:58 +0000</time>
+          Updated <time class='js-timeago' datetime='2021-09-15 16:48:50 -0500'>2021-09-15 16:48:50 -0500</time>
         
       </span>
     </div>
     <div>
-      <h3><small>ruby /</small> gilded_rose_spec.rb</h3>
+      <h3><small>ruby /</small> array_texts.rb</h3>
     </div>
   </div>
   <!--End Page Title -->
@@ -68,7 +68,7 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">13</span><small> lines of codes</small></div>
+              <div><span class="metric">7</span><small> lines of codes</small></div>
               <div><span class="metric">0</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
@@ -76,7 +76,7 @@
               <div><span class="metric">1</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">14.46</span><small> complexity</small></div>
+              <div><span class="metric">0.0</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -97,18 +97,12 @@
       </div>
     </div>
 
-    <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
-
-require File.join(File.dirname(__FILE__), &#39;gilded_rose&#39;)
-
-describe GildedRose do
-  describe &#39;#update_quality&#39; do
-    it &#39;does not change the name&#39; do
-      items = [Item.new(&#39;foo&#39;, 0, 0)]
-      GildedRose.new(items).update_quality
-      expect(items[0].name).to eq &#39;fixme&#39;
-    end
-  end
+    <code class="prettyprint linenums lang-ruby file-code js-file-code">module InstancePrices
+  TEXTS = {
+    &#39;Backstage&#39; =&gt; &quot;Backstage passes to a TAFKAL80ETC concert&quot;,
+    &#39;Sulfuras&#39; =&gt; &quot;Sulfuras, Hand of Ragnaros&quot;,
+    &#39;Aged&#39; =&gt; &quot;Aged Brie&quot;
+  }
 end
 </code>
   </div>

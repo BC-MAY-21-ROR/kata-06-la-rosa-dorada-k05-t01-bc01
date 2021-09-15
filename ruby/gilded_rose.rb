@@ -1,6 +1,6 @@
 require_relative 'array_texts'
 include InstancePrices
-# frozen_string_literal: true
+#frozen_string_literal: true
 class GildedRose
   def initialize(items)
     @items = items
@@ -36,12 +36,11 @@ class GildedRose
   def quality(item)
     item.quality = item.quality - 1 if item.quality.positive? && (item.name != TEXTS['Sulfuras'])
   end
-  
+
   def met_2(item)
     item.quality = item.quality + 1 if item.sell_in < 11 && (item.quality < 50)
     item.quality = item.quality + 1 if item.sell_in < 6 && (item.quality < 50)
   end
-
 end
 
 class Item
