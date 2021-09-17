@@ -17,10 +17,10 @@ class GildedRose
   def sell_negative(item)
     if item.sell_in.negative?
       if item.name != TEXTS['Aged']
-        return (item.quality = item.quality - 1 if item.quality.positive? && (item.name != TEXTS['Sulfuras'])) if item.name != TEXTS['Backstage']
+        return (item.quality = item_quality(false,item) if item.quality.positive? && (item.name != TEXTS['Sulfuras'])) if item.name != TEXTS['Backstage']
         return item.quality = item.quality - item.quality
       elsif item.quality < 50
-        item.quality = item.quality + 1
+        item.quality = item_quality(true,item)
       end
     end
   end
@@ -28,18 +28,22 @@ class GildedRose
   def quality_aging(item)
     return quality(item) if (item.name != TEXTS['Aged']) && (item.name != TEXTS['Backstage'])
     if item.quality < 50
-      item.quality = item.quality + 1
+      item.quality = item_quality(true,item)
       return met_2(item) if item.name == TEXTS['Backstage']
     end
   end
 
   def quality(item)
-    item.quality = item.quality - 1 if item.quality.positive? && (item.name != TEXTS['Sulfuras'])
+    item.quality = item_quality(false,item) if item.quality.positive? && (item.name != TEXTS['Sulfuras'])
   end
 
   def met_2(item)
-    item.quality = item.quality + 1 if item.sell_in < 11 && (item.quality < 50)
-    item.quality = item.quality + 1 if item.sell_in < 6 && (item.quality < 50)
+    item.quality = item_quality(true,item) if item.sell_in < 11 && (item.quality < 50)
+    item.quality = item_quality(true,item) if item.sell_in < 6 && (item.quality < 50)
+  end
+
+  def item_quality(state, item)
+    return state ? item.quality + 1 : item.quality - 1
   end
 end
 
