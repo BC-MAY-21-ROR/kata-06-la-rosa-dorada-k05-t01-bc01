@@ -1,13 +1,16 @@
 require_relative 'array_texts'
 include InstancePrices
+
 #frozen_string_literal: true
 class GildedRose
+  attr_accessor :items
+
   def initialize(items)
     @items = items
   end
 
   def update_quality
-    @items.each do |item|
+    items.each do |item|
       quality_aging(item)
       item.sell_in = item.sell_in - 1 if item.name != TEXTS['Sulfuras']
       sell_negative(item)
